@@ -5,7 +5,7 @@ namespace SQL;
 use PDO;
 use PDOStatement;
 
-class ExtendedPdo extends PDO
+class ExtendedPDO extends PDO
 {
     protected $pdo;
 
@@ -73,6 +73,16 @@ class ExtendedPdo extends PDO
     }
 
 
+    /**
+     * Prepares an SQL statement with bound values.
+     *
+     * @param string $statement - The SQL statement to prepare for execution.
+     * @param array $values - The values to bind to the statement.
+     *
+     * @return \PDOStatement
+     *
+     * @throws Exception
+     */
     public function prepareWithBindValues($statement, array $values = [])
     {
         if (!$values) {

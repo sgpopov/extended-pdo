@@ -3,9 +3,9 @@
 namespace SQL;
 
 use PDO;
-use SQL\ExtendedPdo;
+use SQL\ExtendedPDO;
 
-class ExtendedPdoTest extends \PHPUnit_Framework_TestCase
+class ExtendedPDOTest extends \PHPUnit_Framework_TestCase
 {
     protected $pdo;
 
@@ -15,7 +15,7 @@ class ExtendedPdoTest extends \PHPUnit_Framework_TestCase
             $this->markTestSkipped('Need "pdo_sqlite" to test in memory.');
         }
 
-        $this->pdo = new ExtendedPdo('sqlite::memory:');
+        $this->pdo = new ExtendedPDO('sqlite::memory:');
 
         $this->createTable();
         $this->insertData();
